@@ -669,6 +669,7 @@ func (l *loggingT) printWithFileLine(s severity, file string, line int, alsoToSt
 
 // output writes the data to the log files and releases the buffer.
 func (l *loggingT) output(s severity, buf *buffer, file string, line int, alsoToStderr bool) {
+	return
 	l.mu.Lock()
 	if l.traceLocation.isSet() {
 		if l.traceLocation.match(file, line) {
